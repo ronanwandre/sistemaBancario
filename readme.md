@@ -1,7 +1,7 @@
-# 🏦 Sistema Bancário Simples (Python)
+# 🏦 Sistema Bancário Orientado a Objetos (Python)
 
-Este é um projeto de **sistema bancário em Python** desenvolvido para simular operações básicas de conta corrente, como **depósito, saque, extrato, criação de usuários e contas**.  
-O objetivo é exercitar conceitos de **lógica de programação**, **estruturas de repetição**, **condicionais**, **funções** e **manipulação de listas e dicionários**.
+Este é um projeto de **sistema bancário em Python** desenvolvido com **Programação Orientada a Objetos (POO)** para simular operações de conta corrente, como **depósito, saque, extrato, criação de usuários e contas**.  
+O objetivo é exercitar conceitos de **classes, herança, métodos, propriedades, listas, funções e abstração com `ABC`**.
 
 ---
 
@@ -40,12 +40,25 @@ O sistema apresenta um menu interativo com as seguintes opções:
 
 ## 📂 Estrutura do Código
 
-- `menu()` → Apresenta as opções disponíveis para o usuário
-- `depositar()` → Realiza depósitos e atualiza saldo e extrato
-- `sacar()` → Gerencia os saques, respeitando regras de limite e quantidade
-- `exibir_extrato()` → Mostra todas as movimentações e saldo atual
-- `criar_usuario()` → Cadastra um novo cliente no sistema
-- `filtrar_usuario()` → Verifica se o CPF informado já existe
-- `criar_conta()` → Cria uma conta vinculada a um usuário existente
-- `listar_contas()` → Exibe todas as contas cadastradas
-- `main()` → Função principal que executa o loop do programa
+### 📌 Classes principais
+
+- `Usuario` → Representa o cliente genérico (endereço, contas).
+- `Pessoa` → Representa pessoa física (nome, nascimento, CPF).
+- `ContaBancaria` → Classe base com saldo, depósitos, saques e histórico.
+- `ContaComum` → Conta corrente com limites de saque e número máximo de operações.
+- `Historico` → Armazena todas as transações realizadas.
+- `Movimento` → Classe abstrata para representar uma transação.
+- `Deposito` → Transação de depósito.
+- `Saque` → Transação de saque.
+
+### 📌 Funções auxiliares
+
+- `mostrar_menu()` → Apresenta as opções disponíveis para o usuário.
+- `realizar_deposito()` → Realiza depósitos em uma conta.
+- `realizar_saque()` → Efetua saques respeitando regras de limite e quantidade.
+- `exibir_extrato()` → Exibe todas as movimentações e o saldo atual.
+- `criar_usuario()` → Cadastra um novo cliente no sistema.
+- `localizar_usuario()` → Busca um usuário pelo CPF.
+- `criar_conta()` → Cria uma conta vinculada a um usuário existente.
+- `listar_contas()` → Mostra todas as contas cadastradas.
+- `main()` → Função principal que executa o loop do programa.
